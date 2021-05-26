@@ -1,0 +1,8 @@
+title 0.6: New note
+
+note over browser:
+input "hi" & submit
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa {"content":"hi","date":"2021-05-26T11:36:06.239Z"}
+server-->browser: HTTP-STATUS 201
