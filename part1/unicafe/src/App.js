@@ -15,6 +15,14 @@ const DataRow = (props) => {
 }
 
 const Statistics = (props) => {
+  if (props.data.all === 0) {
+    return (
+      <div>
+        <Headers text='statistics'/>
+        No feedback given
+      </div>
+    )
+  }
   return (
     <div>
       <Headers text='statistics'/>
