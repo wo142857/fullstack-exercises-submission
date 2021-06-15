@@ -14,6 +14,20 @@ const DataRow = (props) => {
   )
 }
 
+const Statistics = (props) => {
+  return (
+    <div>
+      <Headers text='statistics'/>
+      <DataRow text='good' value={props.data.good}/>
+      <DataRow text='neutral' value={props.data.neutral}/>
+      <DataRow text='bad' value={props.data.bad}/>
+      <DataRow text='all' value={props.data.all}/>
+      <DataRow text='average' value={props.data.average}/>
+      <DataRow text='positive' value={props.data.positive}/>
+    </div>
+  )
+}
+
 const App = () => {
   // save clicks of each button to own state
   const [good, setGood] = useState(0)
@@ -55,19 +69,22 @@ const App = () => {
     allCalcu(-1)
   }
 
+  const data = {
+    'good': good,
+    'neutral': neutral,
+    'bad': bad,
+    'all': all,
+    'average': average,
+    'positive': positive
+  }
+
   return (
     <div>
       <Headers text='give Feedback'/>
       <button onClick={goodHandle}>good</button>
       <button onClick={neutralHandle}>neutral</button>
       <button onClick={badHandle}>bad</button>
-      <Headers text='statistics'/>
-      <DataRow text='good' value={good}/>
-      <DataRow text='neutral' value={neutral}/>
-      <DataRow text='bad' value={bad}/>
-      <DataRow text='all' value={all}/>
-      <DataRow text='average' value={average}/>
-      <DataRow text='positive' value={positive}/>
+      <Statistics data={data}/>
     </div>
   )
 }
