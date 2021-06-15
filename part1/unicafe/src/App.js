@@ -6,14 +6,6 @@ const Headers = (props) => {
   )
 }
 
-const DataRow = (props) => {
-  return (
-    <div>
-      {props.text} {props.value}
-    </div>
-  )
-}
-
 const Statistics = (props) => {
   if (props.data.all === 0) {
     return (
@@ -26,12 +18,34 @@ const Statistics = (props) => {
   return (
     <div>
       <Headers text='statistics'/>
-      <DataRow text='good' value={props.data.good}/>
-      <DataRow text='neutral' value={props.data.neutral}/>
-      <DataRow text='bad' value={props.data.bad}/>
-      <DataRow text='all' value={props.data.all}/>
-      <DataRow text='average' value={props.data.average}/>
-      <DataRow text='positive' value={props.data.positive}/>
+      <table>
+        <tbody>
+          <tr>
+            <td>good</td>
+            <td>{props.data.good}</td>
+          </tr>
+          <tr>
+            <td>neutral</td>
+            <td>{props.data.neutral}</td>
+          </tr>
+          <tr>
+            <td>bad</td>
+            <td>{props.data.bad}</td>
+          </tr>
+          <tr>
+            <td>all</td>
+            <td>{props.data.all}</td>
+          </tr>
+          <tr>
+            <td>average</td>
+            <td>{props.data.average}</td>
+          </tr>
+          <tr>
+            <td>positive</td>
+            <td>{props.data.positive}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }
